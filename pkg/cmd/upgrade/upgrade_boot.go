@@ -399,15 +399,15 @@ func (o *UpgradeBootOptions) setupGitConfig(dir string) error {
 }
 
 func (o *UpgradeBootOptions) excludeFiles(commit string) error {
-	excludedFiles := []string{"OWNERS"}
-	err := o.Git().CheckoutCommitFiles(o.Dir, commit, excludedFiles)
-	if err != nil {
-		return errors.Wrap(err, "failed to checkout files")
-	}
-	err = o.Git().AddCommitFiles(o.Dir, "chore: exclude files from upgrade", excludedFiles)
-	if err != nil && !strings.Contains(err.Error(), "nothing to commit") {
-		return errors.Wrapf(err, "failed to commit excluded files %v", excludedFiles)
-	}
+//	excludedFiles := []string{"OWNERS"}
+//	err := o.Git().CheckoutCommitFiles(o.Dir, commit, excludedFiles)
+//	if err != nil {
+//		return errors.Wrap(err, "failed to checkout files")
+//	}
+//	err = o.Git().AddCommitFiles(o.Dir, "chore: exclude files from upgrade", excludedFiles)
+//	if err != nil && !strings.Contains(err.Error(), "nothing to commit") {
+//		return errors.Wrapf(err, "failed to commit excluded files %v", excludedFiles)
+//	}
 	return nil
 }
 
